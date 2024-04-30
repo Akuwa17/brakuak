@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pokemon{
+
+            display: inline-block;
+            text-align: center;
+        }
+        .pokemon img{
+        display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>pokemon gooooo...</h1>
+    <section id="container"></section>
+    <script >
+      // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+     const baseUrl =' https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+     const container =document.querySelector('#container');
+
+     for (let index = 1; index <500; index++) {
+        const pokeBall = document.createElement('div');
+        pokeBall.classList.add('pokemon');
+        
+        const imgPokemon = document.createElement('img');
+        imgPokemon.src = `${baseUrl}${index}.png`;
+
+        const tagar =document.createElement('span');
+        tagar.innerText=`#${index}`
+
+        pokeBall.appendChild(tagar)
+        pokeBall.appendChild(imgPokemon);
+        container.appendChild(pokeBall);
+     }
+    </script>
+</body>
+</html>
